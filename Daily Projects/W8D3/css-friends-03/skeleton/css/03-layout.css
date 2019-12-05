@@ -1,0 +1,26 @@
+/* PHASE 3: Layout */
+.content {
+    position: relative;
+    width: 900px;
+    margin: 0 auto;
+    border-left: 10px solid dodgerblue;
+    border-right: 10px solid dodgerblue;
+    border-bottom: 10px solid dodgerblue;
+
+}
+
+.content-sidebar {
+    min-height: 200px;
+    background-color: magenta;
+    float: left;
+    width: 200px;
+    padding: 20px;
+}
+
+.content-main {
+    min-height: 200px;
+    background-color: mediumspringgreen;
+    float: left;
+    width: 620px;
+    padding: 20px;
+}
