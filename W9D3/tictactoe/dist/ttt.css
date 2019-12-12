@@ -1,0 +1,30 @@
+li.unclicked {
+  background-color: grey;
+}
+
+li.unclicked:hover {
+  background-color: yellow;
+}
+
+li {
+  background-color: white;
+}
+
+ul {
+  margin-left: 0px;
+  padding-inline-start: 0px;
+}
+
+h1 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font: italic small-caps bold 100px Georgia, sans-serif;
+}
