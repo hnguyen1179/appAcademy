@@ -3,7 +3,7 @@ li.unclicked {
 }
 
 li.unclicked:hover {
-  background-color: yellow;
+  background-color: green;
 }
 
 li {

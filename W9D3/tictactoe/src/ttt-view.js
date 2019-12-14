@@ -21,26 +21,22 @@ class View {
     $square.css('align-items', 'center');
     $square.css('justify-content', 'center');
     $square.css('font', 'italic small-caps bold 100px Georgia, sans-serif');
+
     if (this.game.isOver()) {
+      console.log('hi');
       $('h2').html(this.game.currentPlayer + ' is the winner');
-      $('li').css('background-color', 'white');
+      $('li').css('background-color', 'green');
+
 
       $('li').each( (el) => {
-        if ($(el).html() === this.game.currentPlayer) {
-          $(el).css('color', 'white');
-        }
+        console.log('hi');
+        console.log(el);
+        // el.html('disabled', true);
+        // if ($(el).val() === this.game.currentPlayer) {
+        //   $(el).css('color', 'white');
+        // }
       });
     }
-      
-      // for (let i = 0; i < 3; i++) {
-      //   for (let j = 0; j < 3; j++) {
-      //     console.log($(`#[${i},${j}]`));
-          // if ($(`#[${i},${j}]`).html(value) === this.game.currentPlayer) {
-          //   $(`#[${i},${j}]`).css('color', 'white');
-          // }
-      //   }
-      // }
-
   }
 
   setupBoard() {
