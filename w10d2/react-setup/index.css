@@ -1,0 +1,29 @@
+.clock {
+  display: flex;
+  justify-content: flex-start;
+  font-family: Baskerville;
+  font-size: 30px;
+  color: white;
+  background-color: mediumpurple;
+  width: 420px;
+  height: auto; 
+  margin: auto;
+  border-radius: 50px;
+  border: 3px solid black ;
+  text-shadow: 5px 2px 5px black;
+  box-shadow: 5px 5px 2px black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.clock-content {
+  text-align: right;
+}
+
+#clock-label {
+  margin-bottom: 0;
+  font-family: Baskerville;
+  text-align: center;
+}
