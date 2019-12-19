@@ -1,9 +1,10 @@
 {
-  "name": "w10d2",
+  "name": "minesweeper",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch --mode=development"
   },
   "keywords": [],
@@ -14,9 +15,9 @@
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
     "babel-loader": "^8.0.6",
-    "webpack": "^4.41.3",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "webpack": "^4.41.3"
   },
   "devDependencies": {
     "webpack-cli": "^3.3.10"

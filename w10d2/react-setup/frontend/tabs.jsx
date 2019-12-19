@@ -7,10 +7,9 @@ class Tabs extends React.Component {
     this.click = this.click.bind(this);
   }
 
-  //define click handler here
   click(e) {
     e.preventDefault();
-    console.log(e.target.getAttribute("id"));
+    console.log('shit');
     this.setState({
       currentIndex: e.target.getAttribute("id")
     });
@@ -19,16 +18,19 @@ class Tabs extends React.Component {
   render() {
     console.log(this.state.currentIndex);
     let {things} = this.props;
-    return ( 
-      <div>
 
-      <header>
-        <ul onClick={this.click}>
-            {things.map((object, idx) => <li id={idx} key={idx}>{object.title} </li>)}
-        </ul>
-          <article>{things[this.state.currentIndex].content}</article>
-      </header>
-       
+    return ( 
+      <div className="tab-root">
+        <h1 id="tab-label">Tabs</h1>
+        <header className="tab-main">
+          <ul className="tab-header" onClick={this.click}>
+              {things.map((object, idx) => <li id={idx} key={idx}>{object.title} </li>)}
+          </ul>
+        </header>
+
+        <article className="tab-content"> 
+          {things[this.state.currentIndex].content}
+        </article>
       </div>
     );
   }
