@@ -14,7 +14,7 @@
 .minesweeper-headline {
     font-size: 32px;
     text-align: center;
-    text-shadow: 5px 5px 1px rgb(0, 0, 0);
+    text-shadow: 4px 4px 0px rgb(0, 0, 0);
     margin-bottom: -5px;
 }
 
@@ -41,7 +41,7 @@ ul {
     padding: 0px;
     height: auto;
     border: 3px solid black;
-    box-shadow: 3px 5px 1px black;
+    box-shadow: 4px 4px 0.4px black;
 }
 
 #bombed {

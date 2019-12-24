@@ -5,7 +5,7 @@ import Board from './board';
 class Game extends React.Component {
     constructor() {
         super();
-        this.state = {board: new Minesweeper.Board(10, 1)}
+        this.state = {board: new Minesweeper.Board(5, 10)}
         this.updateGame = this.updateGame.bind(this);
     }
 
