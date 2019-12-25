@@ -18,8 +18,3 @@ export const removeTodo = (todo) => ({
     type: REMOVE_TODO,
     todo
 });
-
-
-window.receiveTodo = receiveTodo;
-window.receieveTodos = receiveTodos;
-window.removeTodo = removeTodo;
