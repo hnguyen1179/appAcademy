@@ -5,11 +5,11 @@ import TodoList from './todo_list';
 import { allTodos } from '../../reducers/selectors';
 import { receiveTodo, removeTodo } from '../../actions/todo_actions';
 
-const mapStateToProps = ( state ) => ({
+const mapStateToProps = (state) => ({
     todos: allTodos(state)
 });
 
-const mapDispatchToProps = ( dispatch ) => ({
+const mapDispatchToProps = (dispatch) => ({
     receiveTodo: todo => dispatch(receiveTodo(todo)),
     removeTodo: todo => dispatch(removeTodo(todo))
 })
