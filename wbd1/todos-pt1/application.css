@@ -1,0 +1,17 @@
+.item-detail-show { 
+    display: block;
+    margin-left: 80px;
+}
+
+.item-detail-hide {
+    display: none;
+    margin-left: 80px;
+}
+
+.todo-title {
+    font-weight: bold
+}
+
+#done-toggle {
+    margin-right: 20px;
+}
