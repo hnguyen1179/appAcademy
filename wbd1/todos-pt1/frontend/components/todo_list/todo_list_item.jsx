@@ -10,7 +10,7 @@ class TodoListItem extends React.Component {
     }
 
     handleDoneToggle(event) {
-        let {todo} = this.props
+        let { todo } = this.props
 
         this.props.receiveTodo({
             id: todo.id,
