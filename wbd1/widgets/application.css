@@ -1,0 +1,46 @@
+/* CSS RESET */
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+.tabs-main > li {
+    list-style-type: none;
+    margin: 5px;
+}
+
+.tabs-main {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 0px 0px 30px;
+    width: 45%;
+}
+
+.clock-content {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0 auto;
+    font-weight: bold;
+    height: 70px;
+    width: 240px;
+    padding: 5px;
+    background-color: cornsilk;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.clock-content > p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.clock-name {
+    font-family: 'Rubik Mono One', sans-serif;
+    text-align: center;
+    color: coral;
+    margin-bottom: -3px;
+}
