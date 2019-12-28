@@ -289,19 +289,32 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Tabs).call(this, props));
     _this.state = {
-      currentTab: 0
+      currentTab: "0"
     };
     _this.handleTabClick = _this.handleTabClick.bind(_assertThisInitialized(_this));
+    _this.handleMouseEnter = _this.handleMouseEnter.bind(_assertThisInitialized(_this));
+    _this.handleMouseLeave = _this.handleMouseLeave.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Tabs, [{
     key: "handleTabClick",
     value: function handleTabClick(event) {
-      console.log('clicked');
       this.setState({
         currentTab: event.currentTarget.getAttribute('tab')
       });
+    }
+  }, {
+    key: "handleMouseEnter",
+    value: function handleMouseEnter(event) {
+      event.currentTarget.style.color = "red";
+      event.currentTarget.style.backgroundColor = "black";
+    }
+  }, {
+    key: "handleMouseLeave",
+    value: function handleMouseLeave(event) {
+      event.currentTarget.style.color = "coral";
+      event.currentTarget.style.backgroundColor = "cornsilk";
     }
   }, {
     key: "render",
@@ -309,17 +322,25 @@ function (_React$Component) {
       var _this2 = this;
 
       var tabsContent = this.props.tabsContent;
+      var currentTab = this.state.currentTab;
       var allTabs = tabsContent.map(function (tab, idx) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: idx
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-          tab: tab.title,
-          onClick: _this2.handleTabClick
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, tab.title)));
+          className: currentTab === idx.toString() ? "selected" : "unselected",
+          key: idx,
+          tab: idx,
+          onClick: _this2.handleTabClick,
+          onMouseEnter: _this2.handleMouseEnter,
+          onMouseLeave: _this2.handleMouseLeave
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, tab.title)));
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      var content = tabsContent[this.state.currentTab].content;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tabs-main"
-      }, allTabs);
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "tabs-main-headers"
+      }, allTabs), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "tabs-main-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, content)));
     }
   }]);
 
