@@ -86,6 +86,104 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/auto.jsx":
+/*!***************************!*\
+  !*** ./frontend/auto.jsx ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Auto =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Auto, _React$Component);
+
+  function Auto(props) {
+    var _this;
+
+    _classCallCheck(this, Auto);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Auto).call(this, props));
+    _this.state = {
+      inputVal: ""
+    };
+    _this.renderInputChange = _this.renderInputChange.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Auto, [{
+    key: "matches",
+    value: function matches() {
+      var names = this.props.names;
+      var inputVal = this.state.inputVal;
+      var filteredNames = names.slice();
+      if (inputVal.length === 0) return names;
+      return filteredNames.filter(function (name) {
+        name = name.toLowerCase();
+        if (inputVal.length > name.length) return false;
+
+        for (var i = 0; i < inputVal.length; i++) {
+          if (name[i] !== inputVal[i]) return false;
+        }
+
+        return true;
+      });
+    }
+  }, {
+    key: "renderInputChange",
+    value: function renderInputChange(event) {
+      this.setState({
+        inputVal: event.target.value.toLowerCase()
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var inputVal = this.state.inputVal;
+      var filteredNames = this.matches();
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Name Search:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: inputVal,
+        onChange: this.renderInputChange
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, filteredNames.map(function (name, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: idx
+        }, " ", name, " ");
+      })));
+    }
+  }]);
+
+  return Auto;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Auto);
+
+/***/ }),
+
 /***/ "./frontend/clock.jsx":
 /*!****************************!*\
   !*** ./frontend/clock.jsx ***!
@@ -184,6 +282,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clock */ "./frontend/clock.jsx");
 /* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabs */ "./frontend/tabs.jsx");
 /* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./weather */ "./frontend/weather.jsx");
+/* harmony import */ var _auto__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auto */ "./frontend/auto.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -207,6 +306,18 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+var names = ['Abba', 'Barney', 'Barbara', 'Jeff', 'Jenny', 'Sarah', 'Sally', 'Xander'];
+var tabsContent = [{
+  title: "ONE",
+  content: "WTF1"
+}, {
+  title: "TWO",
+  content: "WTF2"
+}, {
+  title: "THREE",
+  content: "WTF3"
+}];
+
 var Root =
 /*#__PURE__*/
 function (_React$Component) {
@@ -221,22 +332,14 @@ function (_React$Component) {
   _createClass(Root, [{
     key: "render",
     value: function render() {
-      var tabsContent = [{
-        title: "ONE",
-        content: "WTF1"
-      }, {
-        title: "TWO",
-        content: "WTF2"
-      }, {
-        title: "THREE",
-        content: "WTF3"
-      }];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "root"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_clock__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_weather__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "interactive-widgets"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"], {
         tabsContent: tabsContent
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_auto__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        names: names
       })));
     }
   }]);

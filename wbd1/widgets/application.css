@@ -67,7 +67,7 @@ li:last-child{
     border-right: 2px solid black;
 }
 
-li:hover {
+.tabs-main-headers > li:hover {
     color: blue;
 }
 
