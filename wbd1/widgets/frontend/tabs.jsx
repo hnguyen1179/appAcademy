@@ -27,7 +27,7 @@ class Tabs extends React.Component {
         let { currentTab } = this.state;
 
         let allTabs = tabsContent.map((tab, idx) => (
-                <li className={ currentTab === idx.toString() ? "selected" : "unselected" } key={idx} tab={idx} onClick={this.handleTabClick} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+                <li className={ currentTab === idx.toString() ? "selected" : "unselected" } key={idx} tab={idx} onClick={this.handleTabClick}>
                     <header >
                         <h1>{tab.title}</h1>
                     </header>

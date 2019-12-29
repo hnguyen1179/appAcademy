@@ -183,6 +183,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clock */ "./frontend/clock.jsx");
 /* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabs */ "./frontend/tabs.jsx");
+/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./weather */ "./frontend/weather.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -200,6 +201,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -231,7 +233,7 @@ function (_React$Component) {
       }];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "root"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_clock__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_clock__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_weather__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "interactive-widgets"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"], {
         tabsContent: tabsContent
@@ -328,9 +330,7 @@ function (_React$Component) {
           className: currentTab === idx.toString() ? "selected" : "unselected",
           key: idx,
           tab: idx,
-          onClick: _this2.handleTabClick,
-          onMouseEnter: _this2.handleMouseEnter,
-          onMouseLeave: _this2.handleMouseLeave
+          onClick: _this2.handleTabClick
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, tab.title)));
       });
       var content = tabsContent[this.state.currentTab].content;
@@ -348,6 +348,115 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Tabs);
+
+/***/ }),
+
+/***/ "./frontend/weather.jsx":
+/*!******************************!*\
+  !*** ./frontend/weather.jsx ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Weather =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Weather, _React$Component);
+
+  function Weather(props) {
+    var _this;
+
+    _classCallCheck(this, Weather);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Weather).call(this, props));
+    _this.state = {
+      weather: null
+    };
+    _this.pollWeather = _this.pollWeather.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Weather, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      navigator.geolocation.getCurrentPosition(this.pollWeather);
+    }
+  }, {
+    key: "pollWeather",
+    value: function pollWeather(location) {
+      var _this2 = this;
+
+      var lat = location.coords.latitude;
+      var lon = location.coords.longitude;
+      var apiKey = 'c429908633cdf925ea2ee11bfdc4b25d';
+      var url = "http://api.openweathermap.org/data/2.5/weather?lat=".concat(lat, "&lon=").concat(lon);
+      url += "&APPID=".concat(apiKey);
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.status == 200 && xmlhttp.readyState == XMLHttpRequest.DONE) {
+          var data = JSON.parse(xmlhttp.responseText);
+
+          _this2.setState({
+            weather: data
+          });
+        }
+      };
+
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+
+      if (this.state.weather) {
+        var weather = this.state.weather;
+        var temp = (weather.main.temp - 273.15) * 1.8 + 32;
+        content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, weather.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, temp.toFixed(1), " degrees"));
+      } else {
+        content = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "loading"
+        }, "loading weather...");
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "weather-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Weather"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "weather"
+      }, content));
+    }
+  }]);
+
+  return Weather;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Weather);
 
 /***/ }),
 

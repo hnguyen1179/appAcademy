@@ -12,6 +12,12 @@ body {
     justify-content: center;
 }
 
+.weather-main { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .tabs-main-headers {
     display: flex;
     justify-content: center;
@@ -59,6 +65,10 @@ li:first-child {
 
 li:last-child{
     border-right: 2px solid black;
+}
+
+li:hover {
+    color: blue;
 }
 
 .tabs-main {
